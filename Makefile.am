@@ -18,77 +18,14 @@ dist_man_MANS	= cpuminer.1
 cpuminer_SOURCES = \
   cpu-miner.c util.c \
   api.c sysinfos.c \
-  sha3/sph_keccak.c \
-  sha3/sph_hefty1.c \
-  sha3/sph_groestl.c \
-  sha3/sph_skein.c \
-  sha3/sph_bmw.c \
-  sha3/sph_jh.c \
-  sha3/sph_shavite.c \
-  sha3/sph_blake.c \
-  sha3/mod_blakecoin.c \
-  sha3/sph_luffa.c \
-  sha3/sph_cubehash.c \
-  sha3/sph_simd.c \
-  sha3/sph_echo.c \
-  sha3/pomelo_x64.c \
-  sha3/sph_hamsi.c \
-  sha3/sph_fugue.c \
-  sha3/sph_sha2.c \
-  sha3/sph_sha2big.c \
-  sha3/sph_shabal.c \
-  sha3/sph_whirlpool.c \
-  crypto/blake2s.c \
-  crypto/oaes_lib.c \
-  crypto/c_keccak.c \
-  crypto/c_groestl.c \
-  crypto/c_blake256.c \
-  crypto/c_jh.c \
-  crypto/c_skein.c \
-  crypto/hash.c \
-  crypto/aesb.c \
-  sha3/sj/scrypt-jane.c \
-  sha3/ar2/src/cores.c \
-  sha3/ar2/src/blake2/blake2b.c \
-  sha3/ar2/src/thread.c \
-  sha3/ar2/src/ref.c \
-  sha3/ar2/src/argon2.c \
-  lyra2/Lyra2.c lyra2/Sponge.c \
-  algo/axiom.c \
-  algo/blake.c \
-  algo/blakecoin.c \
-  algo/blake2.c \
-  algo/bmw256.c \
-  algo/c11.c \
-  algo/cryptonight.c \
-  algo/cryptolight.c \
-  algo/drop.c \
-  algo/fresh.c \
-  algo/groestl.c \
-  algo/heavy.c \
-  algo/ink.c \
-  algo/luffa.c \
-  algo/lyra2re.c \
-  algo/lyra2rev2.c \
-  algo/myr-groestl.c \
-  algo/keccak.c \
-  algo/pentablake.c \
-  algo/quark.c \
-  algo/neoscrypt.c \
-  algo/nist5.c \
-  algo/pluck.c \
-  algo/qubit.c \
-  algo/scrypt.c \
+  algo/argon2a.c \
   algo/sha2.c \
-  algo/skein.c \
-  algo/skein2.c \
-  algo/s3.c \
-  algo/hive.c \
-  algo/x13.c \
-  algo/x14.c \
-  algo/x15.c \
-  algo/zr5.c \
-  algo/argon2a.c
+  crypto/argon2d/argon2.c \
+  crypto/argon2d/core.c \
+  crypto/argon2d/encoding.c \
+  crypto/argon2d/opt.c \
+  crypto/argon2d/thread.c \
+  crypto/blake2/blake2b.c 
 
 disable_flags =
 

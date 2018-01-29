@@ -2045,114 +2045,14 @@ void print_hash_tests(void)
 
 	printf(CL_WHT "CPU HASH ON EMPTY BUFFER RESULTS:" CL_N "\n\n");
 
-	//buf[0] = 1; buf[64] = 2; // for endian tests
-
-	axiomhash(&hash[0], &buf[0]);
-	printpfx("axiom", hash);
-
-	blakehash(&hash[0], &buf[0]);
-	printpfx("blake", hash);
-
-	blakecoinhash(&hash[0], &buf[0]);
-	printpfx("blakecoin", hash);
-
-	blake2s_hash(&hash[0], &buf[0]);
-	printpfx("blake2s", hash);
-
-	bmwhash(&hash[0], &buf[0]);
-	printpfx("bmw", hash);
-
-	c11hash(&hash[0], &buf[0]);
-	printpfx("c11", hash);
-
-	cryptolight_hash(&hash[0], &buf[0], 76);
-	printpfx("cryptolight", hash);
-
-	cryptonight_hash(&hash[0], &buf[0], 76);
-	printpfx("cryptonight", hash);
-
-	droplp_hash(&hash[0], &buf[0]);
-	printpfx("drop", hash);
-
-	freshhash(&hash[0], &buf[0], 80);
-	printpfx("fresh", hash);
-
-	groestlhash(&hash[0], &buf[0]);
-	printpfx("groestl", hash);
-
-	heavyhash((uint8_t*) &hash[0], (uint8_t*) &buf[0], 32);
-	printpfx("heavy", hash);
-
-	keccakhash(&hash[0], &buf[0]);
-	printpfx("keccak", hash);
-
-	luffahash(&hash[0], &buf[0]);
-	printpfx("luffa", hash);
-
-	lyra2_hash(&hash[0], &buf[0]);
-	printpfx("lyra2", hash);
-
-	lyra2rev2_hash(&hash[0], &buf[0]);
-	printpfx("lyra2v2", hash);
-
-	myriadhash(&hash[0], &buf[0]);
-	printpfx("myr-gr", hash);
-
-	neoscrypt((uchar*) &hash[0], (uchar*)&buf[0], 80000620);
-	printpfx("neoscrypt", hash);
-
-	nist5hash(&hash[0], &buf[0]);
-	printpfx("nist5", hash);
-
-	pentablakehash(&hash[0], &buf[0]);
-	printpfx("pentablake", hash);
-
-	pluck_hash((uint32_t*)&hash[0], (uint32_t*)&buf[0], scratchbuf, 128);
-	memset(&buf[0], 0, sizeof(buf));
-	printpfx("pluck", hash);
-
-	init_quarkhash_contexts();
-	quarkhash(&hash[0], &buf[0]);
-	printpfx("quark", hash);
-
-	qubithash(&hash[0], &buf[0]);
-	printpfx("qubit", hash);
-
-	inkhash(&hash[0], &buf[0]);
-	printpfx("shavite3", hash);
-
 	sha256d((uint8_t*) &hash[0], (uint8_t*)&buf[0], 64);
 	printpfx("sha256d", hash);
 
-	skeinhash(&hash[0], &buf[0]);
-	printpfx("skein", hash);
 
-	skein2hash(&hash[0], &buf[0]);
-	printpfx("skein2", hash);
-
-	s3hash(&hash[0], &buf[0]);
-	printpfx("s3", hash);
-
-	hivehash(&hash[0], &buf[0]);
-	printpfx("hive", hash);
 
 	argon2hash(&hash[0], &buf[0]);
 	printpfx("argon2", hash);
 	
-	x13hash(&hash[0], &buf[0]);
-	printpfx("x13", hash);
-
-	x14hash(&hash[0], &buf[0]);
-	printpfx("x14", hash);
-
-	x15hash(&hash[0], &buf[0]);
-	printpfx("x15", hash);
-
-	//zr5hash(&hash[0], &buf[0]);
-	zr5hash_pok(&hash[0], (uint32_t*) &buf[0]);
-	memset(buf, 0, sizeof(buf));
-	printpfx("zr5", hash);
-
 	printf("\n");
 
 	free(scratchbuf);
