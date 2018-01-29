@@ -97,7 +97,7 @@ void fill_segment(const argon2_instance_t *instance,
     uint32_t prev_offset, curr_offset;
     uint32_t starting_index, i;
     __m128i state[64];
-    int data_independent_addressing;
+	int data_independent_addressing = 0;;
 
     if (instance == NULL) {
         return;
