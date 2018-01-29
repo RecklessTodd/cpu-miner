@@ -20,45 +20,7 @@ fork of [pooler](//github.com/pooler)'s cpuminer (see AUTHORS for list of contri
 Algorithms
 ==========
 #### Currently supported
- * ✓ __scrypt__ (Litecoin, Dogecoin, Feathercoin, ...)
- * ✓ __scrypt:N__
- * ✓ __sha256d__ (Bitcoin, Freicoin, Peercoin/PPCoin, Terracoin, ...)
- * ✓ __axiom__ (Axiom Shabal-256 based MemoHash)
- * ✓ __blake__ (Saffron [SFR] Blake-256)
- * ✓ __bmw__ (Midnight [MDT] BMW-256)
- * ✓ __cryptonight__ (Bytecoin [BCN], Monero)
- * ✓ __cryptonight-light__ (Aeon)
- * ✓ __dmd-gr__ (Diamond-Groestl)
- * ✓ __fresh__ (FreshCoin)
- * ✓ __groestl__ (Groestlcoin)
- * ✓ __lyra2RE__ (Lyrabar, Cryptocoin)
- * ✓ __lyra2REv2__ (VertCoin [VTC])
- * ✓ __myr-gr__ (Myriad-Groestl)
- * ✓ __neoscrypt__ (Feathercoin)
- * ✓ __nist5__ (MistCoin [MIC], TalkCoin [TAC], ...)
- * ✓ __pentablake__ (Joincoin)
- * ✓ __pluck__ (Supcoin [SUP])
- * ✓ __quark__ (Quarkcoin)
- * ✓ __qubit__ (MyriadCoin [MYR])
- * ✓ __skein__ (Skeincoin, Myriadcoin, Xedoscoin, ...)
- * ✓ __skein2__ (Woodcoin)
- * ✓ __s3__ (OneCoin)
- * ✓ __hive__ (Darkcoin [DRK], Hirocoin, Limecoin, ...)
- * ✓ __x13__ (Sherlockcoin, [ACE], [B2B], [GRC], [XHC], ...)
- * ✓ __x14__ (X14, Webcoin [WEB])
- * ✓ __x15__ (RadianceCoin [RCE])
- * ✓ __zr5__ (Ziftrcoin [ZRC])
- * ✓ __ar2__ (Argon2Coin [AR2])
-
-#### Implemented, but untested
- * ? blake2s
- * ? hefty1 (Heavycoin)
- * ? keccak (Maxcoin  HelixCoin, CryptoMeth, Galleon, 365coin, Slothcoin, BitcointalkCoin)
- * ? luffa (Joincoin, Doomcoin)
- * ? shavite3 (INKcoin)
-
-#### Planned support for
- * *scrypt-jane* (YaCoin, CopperBars, Pennies, Tickets, etc..)
+ * ✓ Argon2D (CRDS)
  
 Dependencies
 ============
