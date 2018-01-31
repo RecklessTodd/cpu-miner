@@ -1,4 +1,4 @@
-CPUMiner-Multi
+cpu-miner
 ==============
 
 [![Build Status](https://travis-ci.org/tpruvot/cpuminer-multi.svg)](https://travis-ci.org/tpruvot/cpuminer-multi)
@@ -40,13 +40,10 @@ Build
 =====
 
 #### Basic *nix build instructions:
- * just use `./build.sh`
-_OR_
-
 ```
  ./autogen.sh	# only needed if building from git repo
  ./nomacro.pl	# only needed if building on Mac OS X or with Clang
- ./configure CFLAGS="*-march=native*" --with-crypto --with-curl
+ ./configure CFLAGS="-march=native" --with-crypto --with-curl
  # Use -march=native if building for a single machine
  make
 ```
@@ -56,13 +53,6 @@ _OR_
 ```
  apt-get install automake autoconf pkg-config libcurl4-openssl-dev libjansson-dev libssl-dev libgmp-dev make g++
 ```
-
-#### Note for pi64 users:
-
-```
- ./configure --disable-assembly CFLAGS="-Ofast -march=native" --with-crypto --with-curl
-```
-
 #### Notes for AIX users:
  * To build a 64-bit binary, export OBJECT_MODE=64
  * GNU-style long options are not supported, but are accessible via configuration file
@@ -118,7 +108,7 @@ Lucas Jones :
 
 Credits
 =======
-CPUMiner-multi was forked from pooler's CPUMiner, and has been started by Lucas Jones.
+cpu-miner was forked from pooler's CPUMiner, and has been started by Lucas Jones.
 * [tpruvot](https://github.com/tpruvot) added all the recent features and newer algorythmns
 * [Wolf9466](https://github.com/wolf9466) helped with Intel AES-NI support for CryptoNight
 
