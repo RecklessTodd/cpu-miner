@@ -43,11 +43,15 @@ Build
 ```
  ./autogen.sh	# only needed if building from git repo
  ./nomacro.pl	# only needed if building on Mac OS X or with Clang
- ./configure CFLAGS="-march=native" --with-crypto --with-curl
- # Use -march=native if building for a single machine
+ ./configure --with-crypto --with-curl 
+ or
+  ./configure --with-crypto --with-curl --disable-avx2 # if building for a machine without AVX2 support 
  make
 ```
 
+#### Basic Windows build with Visual Studio 2013
+ * All the required .lib files are now included in tree (windows only)
+ * AVX enabled by default for x64 platform (AVX2 and XOP could also be used)
 
 Usage instructions
 ==================
