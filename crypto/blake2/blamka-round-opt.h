@@ -27,9 +27,10 @@
 
 #if defined(__XOP__) && (defined(__GNUC__) || defined(__clang__))
 #include <x86intrin.h>
+#elif defined(_WIN32)
+#include <intrin.h>
 #endif
 
-#include <x86intrin.h>
 #if !defined(__XOP__)
 #if defined(__SSSE3__)
 #define r16                                                                    \

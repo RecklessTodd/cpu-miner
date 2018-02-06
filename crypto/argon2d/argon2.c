@@ -390,16 +390,27 @@ size_t argon2_encodedlen(uint32_t t_cost, uint32_t m_cost, uint32_t parallelism,
 
 #include <stdbool.h>
 #include <pthread.h>
+#if defined(_WIN32)
+#include <intrin.h>
+#else
 #include <x86intrin.h>
+#endif
 #include "../blake2/blake2.h"
 
 typedef struct _Argon2d_Block
 {
 	union
 	{
+#if defined(_WIN32)
+		__declspec(align(32)) uint64_t data[1024 / 8];
+		__declspec(align(32)) __m128i dqwords[1024 / 16];
+		__declspec(align(32)) __m256i qqwords[1024 / 32];
+#else
 		uint64_t data[1024 / 8] __attribute__((aligned(32)));
 		__m128i dqwords[1024 / 16] __attribute__((aligned(32)));
 		__m256i qqwords[1024 / 32] __attribute__((aligned(32)));
+#endif
+
 	};
 } Argon2d_Block;
 
@@ -487,7 +498,6 @@ void CompressBlock(uint64_t *h, const uint64_t *m, uint64_t t, uint64_t f)
 
 void Argon2dInitHash(void *HashOut, void *Input)
 {
-	blake2b_state BlakeHash;
 	uint32_t InBuf[64];							// Is only 50 uint32_t, but need more space for Blake2B
 	
 	memset(InBuf, 0x00, 200);
@@ -621,9 +631,7 @@ void *ThreadedSegmentFill(void *ThrData)
 
 void Argon2dFillAllBlocks(Argon2d_Block *Matrix)
 {
-	pthread_t ThrHandles[CONCURRENT_THREADS];
-	Argon2ThreadData ThrData[CONCURRENT_THREADS];
-	
+
 	int s;
 	for(s = 0; s < 4; ++s)
 	{
@@ -665,7 +673,7 @@ void WolfArgon2dPoWHash(void *Output, void *Matrix, const void *BlkHdr)
 void WolfArgon2dAllocateCtx(void **Matrix)
 {
 	#ifdef _WIN32
-	*((Argon2d_Block **)Matrix) = (Argon2d_Block *)_aligned_malloc(32, sizeof(Argon2d_Block) * (SEGMENT_LENGTH << 4));
+	*((Argon2d_Block **)Matrix) = (Argon2d_Block *)_aligned_malloc(sizeof(Argon2d_Block) * (SEGMENT_LENGTH << 4), 32);
 	#else
 	*((Argon2d_Block **)Matrix) = (Argon2d_Block *)malloc(sizeof(Argon2d_Block) * (SEGMENT_LENGTH << 4));
 	posix_memalign(Matrix, 32, sizeof(Argon2d_Block) * (SEGMENT_LENGTH << 4));
@@ -674,7 +682,11 @@ void WolfArgon2dAllocateCtx(void **Matrix)
 
 void WolfArgon2dFreeCtx(void *Matrix)
 {
+#ifdef _WIN32
+	_aligned_free(Matrix);
+#else	
 	free(Matrix);
+#endif
 }
 
 #endif

@@ -1,0 +1,183 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="cpu-miner.c" />
+    <ClCompile Include="util.c" />
+    <ClCompile Include="compat\winansi.c">
+      <Filter>compat</Filter>
+    </ClCompile>
+    <ClCompile Include="compat\jansson\load.c">
+      <Filter>jansson</Filter>
+    </ClCompile>
+    <ClCompile Include="compat\jansson\utf.c">
+      <Filter>jansson</Filter>
+    </ClCompile>
+    <ClCompile Include="compat\jansson\dump.c">
+      <Filter>jansson</Filter>
+    </ClCompile>
+    <ClCompile Include="compat\jansson\hashtable.c">
+      <Filter>jansson</Filter>
+    </ClCompile>
+    <ClCompile Include="compat\jansson\strbuffer.c">
+      <Filter>jansson</Filter>
+    </ClCompile>
+    <ClCompile Include="compat\gettimeofday.c">
+      <Filter>compat</Filter>
+    </ClCompile>
+    <ClCompile Include="compat\getopt\getopt_long.c">
+      <Filter>compat</Filter>
+    </ClCompile>
+    <ClCompile Include="compat\jansson\value.c">
+      <Filter>jansson</Filter>
+    </ClCompile>
+    <ClCompile Include="asm\sha2-x64.S">
+      <Filter>arch\x64</Filter>
+    </ClCompile>
+    <ClCompile Include="api.c" />
+    <ClCompile Include="sysinfos.c" />
+    <ClCompile Include="compat\jansson\error.c">
+      <Filter>jansson</Filter>
+    </ClCompile>
+    <ClCompile Include="compat\jansson\memory.c">
+      <Filter>jansson</Filter>
+    </ClCompile>
+    <ClCompile Include="compat\jansson\pack_unpack.c">
+      <Filter>jansson</Filter>
+    </ClCompile>
+    <ClCompile Include="compat\jansson\strconv.c">
+      <Filter>jansson</Filter>
+    </ClCompile>
+    <ClCompile Include="algo\sha2.c">
+      <Filter>algo</Filter>
+    </ClCompile>
+    <ClCompile Include="crypto\argon2d\opt.c" />
+    <ClCompile Include="algo\argon2a.c">
+      <Filter>algo</Filter>
+    </ClCompile>
+    <ClCompile Include="crypto\argon2d\argon2.c">
+      <Filter>crypto\argon2d</Filter>
+    </ClCompile>
+    <ClCompile Include="crypto\argon2d\core.c">
+      <Filter>crypto\argon2d</Filter>
+    </ClCompile>
+    <ClCompile Include="crypto\argon2d\encoding.c">
+      <Filter>crypto\argon2d</Filter>
+    </ClCompile>
+    <ClCompile Include="crypto\argon2d\thread.c">
+      <Filter>crypto\argon2d</Filter>
+    </ClCompile>
+    <ClCompile Include="crypto\blake2\blake2b.c">
+      <Filter>crypto\blake2</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="compat.h">
+      <Filter>compat</Filter>
+    </ClInclude>
+    <ClInclude Include="elist.h">
+      <Filter>compat</Filter>
+    </ClInclude>
+    <ClInclude Include="compat\getopt\getopt.h">
+      <Filter>compat</Filter>
+    </ClInclude>
+    <ClInclude Include="compat\inttypes.h">
+      <Filter>compat</Filter>
+    </ClInclude>
+    <ClInclude Include="compat\stdbool.h">
+      <Filter>compat</Filter>
+    </ClInclude>
+    <ClInclude Include="compat\sys\time.h">
+      <Filter>compat</Filter>
+    </ClInclude>
+    <ClInclude Include="compat\unistd.h">
+      <Filter>compat</Filter>
+    </ClInclude>
+    <ClInclude Include="compat\winansi.h">
+      <Filter>compat</Filter>
+    </ClInclude>
+    <ClInclude Include="miner.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="compat\cpuminer-config.h">
+      <Filter>headers</Filter>
+    </ClInclude>
+    <ClInclude Include="compat\jansson\jansson.h">
+      <Filter>jansson</Filter>
+    </ClInclude>
+    <ClInclude Include="compat\jansson\config.h">
+      <Filter>jansson</Filter>
+    </ClInclude>
+    <ClInclude Include="res\resource.h">
+      <Filter>res</Filter>
+    </ClInclude>
+    <ClInclude Include="crypto\argon2d\argon2.h">
+      <Filter>crypto\argon2d</Filter>
+    </ClInclude>
+    <ClInclude Include="crypto\argon2d\core.h">
+      <Filter>crypto\argon2d</Filter>
+    </ClInclude>
+    <ClInclude Include="crypto\argon2d\encoding.h">
+      <Filter>crypto\argon2d</Filter>
+    </ClInclude>
+    <ClInclude Include="crypto\argon2d\thread.h">
+      <Filter>crypto\argon2d</Filter>
+    </ClInclude>
+    <ClInclude Include="crypto\blake2\blake2.h">
+      <Filter>crypto\blake2</Filter>
+    </ClInclude>
+    <ClInclude Include="crypto\blake2\blamka-round-opt.h">
+      <Filter>crypto\blake2</Filter>
+    </ClInclude>
+    <ClInclude Include="crypto\blake2\blamka-round-ref.h">
+      <Filter>crypto\blake2</Filter>
+    </ClInclude>
+    <ClInclude Include="crypto\blake2\blake2-impl.h">
+      <Filter>crypto\blake2</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="sph">
+      <UniqueIdentifier>{822b216c-102a-48ca-b62b-7689df410249}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="compat">
+      <UniqueIdentifier>{f5e8fc70-27e7-41ab-a14d-2b0462350980}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="headers">
+      <UniqueIdentifier>{343fa430-44d1-4ff7-b15d-8915052fe036}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="jansson">
+      <UniqueIdentifier>{88b3057f-0bb6-49d4-98a4-551c8bd8ce0d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="crypto">
+      <UniqueIdentifier>{d17f8918-3371-4acb-ba63-06be828562a1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="arch">
+      <UniqueIdentifier>{04c96afe-01af-4f5c-9ee7-219481033018}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="arch\x64">
+      <UniqueIdentifier>{e2f9ccb4-db0b-4e4f-9cfd-935e8e0ebb78}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="algo">
+      <UniqueIdentifier>{34f266e4-b48f-4721-ac34-474b65726498}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="res">
+      <UniqueIdentifier>{5969f6d8-98c0-49c9-8e4c-51c54b5f0e16}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="crypto\argon2d">
+      <UniqueIdentifier>{a041c07f-a18c-43a9-9163-389f0ff9cf25}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="crypto\blake2">
+      <UniqueIdentifier>{b90d81f9-f735-4131-9fcf-bc862c1125d5}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\cpuminer.ico">
+      <Filter>res</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="res\cpuminer.rc">
+      <Filter>res</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>
