@@ -195,7 +195,7 @@ static void sha256d_80_swap(uint32_t *hash, const uint32_t *data)
 		hash[i] = swab32(hash[i]);
 }
 
-extern void sha256d(unsigned char *hash, const unsigned char *data, int len)
+void sha256d(unsigned char *hash, const unsigned char *data, int len)
 {
 	uint32_t S[16], T[16];
 	int i, r;

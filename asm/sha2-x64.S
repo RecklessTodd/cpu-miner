@@ -107,7 +107,7 @@ sha256d_4preext2_30:
 	.long 0x00400022, 0x00400022, 0x00400022, 0x00400022
 
 
-#ifdef USE_AVX2
+#ifdef __AVX2__
 
 	.data
 	.p2align 7
@@ -200,7 +200,7 @@ sha256d_8preext2_24:
 sha256d_8preext2_30:
 	.long 0x00400022, 0x00400022, 0x00400022, 0x00400022, 0x00400022, 0x00400022, 0x00400022, 0x00400022
 
-#endif /* USE_AVX2 */
+#endif /* __AVX2__ */
 
 
 	.text
@@ -235,7 +235,7 @@ _sha256_init_4way:
 	ret
 
 
-#ifdef USE_AVX2
+#ifdef __AVX2__
 	.text
 	.p2align 6
 	.globl sha256_init_8way
@@ -266,7 +266,7 @@ _sha256_init_8way:
 	popq	%rdi
 #endif
 	ret
-#endif /* USE_AVX2 */
+#endif /* __AVX2__ */
 
 
 .macro sha256_sse2_extend_round i
@@ -571,7 +571,7 @@ _sha256_init_8way:
 #endif /* USE_AVX */
 
 
-#if defined(USE_AVX2)
+#if defined(__AVX2__)
 
 .macro sha256_avx2_extend_round i
 	vmovdqa	(\i-15)*32(%rax), %ymm0
@@ -705,7 +705,7 @@ _sha256_init_8way:
 	sha256_avx2_main_round \i+3, %ymm0, %ymm10, %ymm9, %ymm8, %ymm7, %ymm3, %ymm4, %ymm5
 .endm
 
-#endif /* USE_AVX2 */
+#endif /* __AVX2__ */
 
 
 #if defined(USE_XOP)
@@ -1224,7 +1224,7 @@ sha256_transform_4way_finish:
 	ret
 
 
-#ifdef USE_AVX2
+#ifdef __AVX2__
 
 	.text
 	.p2align 6
@@ -1416,7 +1416,7 @@ sha256_transform_8way_finish:
 #endif
 	ret
 
-#endif /* USE_AVX2 */
+#endif /* __AVX2__ */
 	
 	
 	.data
@@ -3067,7 +3067,7 @@ sha256_use_4way_done:
 	ret
 
 
-#if defined(USE_AVX2)
+#if defined(__AVX2__)
 
 	.text
 	.p2align 6
@@ -3656,6 +3656,6 @@ sha256_use_8way_done:
 	popq	%rbx
 	ret
 
-#endif /* USE_AVX2 */
+#endif /* __AVX2__ */
 
 #endif
