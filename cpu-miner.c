@@ -58,7 +58,7 @@ BOOL WINAPI ConsoleHandler(DWORD);
 #pragma comment(lib, "winmm.lib")
 #endif
 
-#define LP_SCANTIME		60
+#define LP_SCANTIME		10
 
 enum workio_commands {
 	WC_GET_WORK,
