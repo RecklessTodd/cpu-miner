@@ -64,7 +64,7 @@ int scanhash_argon2(int thr_id, uint32_t *pdata, const uint32_t *ptarget,
 		unsigned char *test = (char*)hash;
 		be32enc(&endiandata[19], nonce);
 
-#ifdef USE_AVX2
+#ifdef __AVX2__
 		WolfArgon2dPoWHash(hash, ctx, endiandata);
 #else
 		argon2hash(hash, endiandata);

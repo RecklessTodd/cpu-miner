@@ -382,7 +382,7 @@ size_t argon2_encodedlen(uint32_t t_cost, uint32_t m_cost, uint32_t parallelism,
          b64len(saltlen) + b64len(hashlen);
 }
 
-#ifdef USE_AVX2
+#ifdef __AVX2__
 
 ///////////////////////////
 // Wolf's Additions

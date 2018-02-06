@@ -180,7 +180,7 @@ int sha256_use_4way();
 void sha256_init_4way(uint32_t *state);
 void sha256_transform_4way(uint32_t *state, const uint32_t *block, int swap);
 #endif
-#if defined(__x86_64__) && defined(USE_AVX2)
+#if defined(__x86_64__) && defined(__AVX2__)
 #define HAVE_SHA256_8WAY 1
 int sha256_use_8way();
 void sha256_init_8way(uint32_t *state);

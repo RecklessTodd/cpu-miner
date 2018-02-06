@@ -95,7 +95,7 @@ then
 	AS_IF([test "x$enable_avx2" != "xno"], [	
     	AC_MSG_CHECKING(whether we can compile AVX2 code)
     	AC_COMPILE_IFELSE([AC_LANG_PROGRAM(,[asm ("vpaddd %ymm0, %ymm1, %ymm2");])],
-    	  AC_DEFINE(USE_AVX2, 1, [Define to 1 if AVX2 assembly is available.])
+    	  AC_DEFINE(__AVX2__, 1, [Define to 1 if AVX2 assembly is available.])
     	  AC_MSG_RESULT(yes)
     	,
     	  AC_MSG_RESULT(no)
@@ -167,8 +167,11 @@ if test -n "$with_crypto" ; then
    LIBCURL="$LIBCURL -lssl -lcrypto"
 fi
 
-
-CFLAGS="$CFLAGS -march=native -O3 $LIBCURL_CFLAGS"
+if test "x$enable_avx2" != "xno"; then
+	CFLAGS="$CFLAGS -march=native -O3 $LIBCURL_CFLAGS"
+else
+	CFLAGS="$CFLAGS -O3 $LIBCURL_CFLAGS"
+fi
 LDFLAGS="$LDFLAGS $LIBCURL_LDFLAGS"
 
 #AC_CHECK_LIB([z],[gzopen],[],[])

@@ -1468,7 +1468,7 @@ static void *miner_thread(void *userdata)
 	memset(&work, 0, sizeof(work));
 
 
-#ifdef USE_AVX2 
+#ifdef __AVX2__ 
 	WolfArgon2dAllocateCtx(&ctx);
 #endif
 
@@ -1719,7 +1719,7 @@ static void *miner_thread(void *userdata)
 out:
 	tq_freeze(mythr->q);
 
-#ifdef USE_AVX2 
+#ifdef __AVX2__ 
 	WolfArgon2dFreeCtx(ctx);
 #endif
 	return NULL;
@@ -2021,7 +2021,7 @@ static void show_version_and_exit(void)
 #if defined(__x86_64__) && defined(USE_AVX)
 		" AVX"
 #endif
-#if defined(__x86_64__) && defined(USE_AVX2)
+#if defined(__x86_64__) && defined(__AVX2__)
 		" AVX2"
 #endif
 #if defined(__x86_64__) && defined(USE_XOP)
@@ -2532,7 +2532,7 @@ int main(int argc, char *argv[]) {
 	pthread_mutex_init(&applog_lock, NULL);
 
 
-#ifdef USE_AVX2
+#ifdef __AVX2__
 	printf(" AVX2 ENABLED \n");
 #else
 	printf(" AVX2 DISABLED \n");
