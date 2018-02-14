@@ -1094,6 +1094,18 @@ static void workio_cmd_free(struct workio_cmd *wc)
 	free(wc);
 }
 
+
+void print_global_hashrate()
+{
+	int i;
+	uint32_t hashrate = 0;
+
+	for (i = 0; i < opt_n_threads; i++)
+		hashrate += thr_hashrates[i];
+
+	applog(LOG_BLUE, "Global hashrate : %d", hashrate);
+}
+
 static bool workio_get_work(struct workio_cmd *wc, CURL *curl)
 {
 	struct work *ret_work;
@@ -1102,6 +1114,8 @@ static bool workio_get_work(struct workio_cmd *wc, CURL *curl)
 	ret_work = (struct work*) calloc(1, sizeof(*ret_work));
 	if (!ret_work)
 		return false;
+
+	print_global_hashrate();
 
 	/* obtain new work from bitcoin via JSON-RPC */
 	while (!get_upstream_work(curl, ret_work)) {
